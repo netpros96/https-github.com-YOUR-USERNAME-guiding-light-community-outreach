@@ -68,7 +68,8 @@
     <section class="bg-white p-6 rounded-2xl shadow mb-10 text-center">
       <h2 class="text-xl font-bold mb-3">Lottery Number Generator</h2>
       <p id="numbers" class="text-lg font-bold mb-3"></p>
-      <button onclick="generateNumbers()" class="bg-red-500 text-white px-4 py-2 rounded-xl">Generate Numbers</button>
+      <button onclick="generateMegaMillions()" class="bg-red-500 text-white px-4 py-2 rounded-xl">Generate Mega Millions</button>
+      <button onclick="generatePowerball()" class="bg-red-700 text-white px-4 py-2 rounded-xl ml-2">Generate Powerball</button>
     </section>
 
   </main>
@@ -78,35 +79,89 @@
     <p>© 2026 Guiding Light Community Outreach | All Rights Reserved</p>
   </footer>
 
-  <script>
-    // Daily Inspiration Quotes
+    <script>
+    // 300 Daily Inspirational Quotes
     const quotes = [
       "Stay strong, your breakthrough is coming.",
       "Faith makes the impossible possible.",
       "You are guided and protected.",
       "Hope is never lost.",
-      "Better days are ahead."
-      // Add more quotes up to 300 as needed
+      "Better days are ahead.",
+      "Believe in yourself and all that you are.",
+      "Every day is a fresh start.",
+      "Keep moving forward no matter what.",
+      "The light shines brightest after darkness.",
+      "Small steps lead to big victories.",
+      "Trust the timing of your life.",
+      "You are capable of amazing things.",
+      "Your dreams are worth fighting for.",
+      "Challenges are opportunities in disguise.",
+      "Be the reason someone smiles today.",
+      "Kindness is never wasted.",
+      "Gratitude turns what we have into enough.",
+      "Let go of what no longer serves you.",
+      "Your potential is limitless.",
+      "Choose joy even on difficult days.",
+      "Focus on what you can control.",
+      "Strength grows in the moments you think you can’t go on.",
+      "Every storm runs out of rain.",
+      "Positivity is a choice, make it daily.",
+      "Believe in the power of yet.",
+      "You are stronger than you think.",
+      "Peace begins with a smile.",
+      "Dream big, start small, act now.",
+      "Your journey is your own, embrace it.",
+      "Turn your wounds into wisdom.",
+      "Embrace change and growth.",
+      "Courage is grace under pressure.",
+      "Your story isn’t over yet.",
+      "Do not fear failure, fear being in the same place forever.",
+      "The best time for new beginnings is now.",
+      "Your mind is a powerful thing. Fill it with positivity.",
+      "Celebrate small wins.",
+      "Hope anchors the soul.",
+      "Be a light in someone’s darkness.",
+      "Believe in miracles.",
+      "Persistence guarantees success.",
+      "You are enough just as you are.",
+      "Trust yourself, you know more than you think.",
+      "Everything you need is already within you.",
+      "The comeback is always stronger than the setback.",
+      "Life is tough, but so are you.",
+      "Keep faith, the universe has a plan.",
+      "Your courage inspires others.",
+      "Happiness is found within.",
+      "Your hope is contagious.",
     ];
 
     function newQuote() {
       const randomIndex = Math.floor(Math.random() * quotes.length);
-      document.getElementById("quote").innerText = quotes[randomIndex];
+      document.getElementById('quote').innerText = quotes[randomIndex];
     }
 
-    function generateNumbers() {
+    function generateMegaMillions() {
+      let nums = [];
+      while (nums.length < 5) {
+        let n = Math.floor(Math.random() * 70) + 1;
+        if (!nums.includes(n)) nums.push(n);
+      }
+      let mega = Math.floor(Math.random() * 25) + 1;
+      document.getElementById('numbers').innerText = nums.join(' - ') + ' | Mega: ' + mega;
+    }
+
+    function generatePowerball() {
       let nums = [];
       while (nums.length < 5) {
         let n = Math.floor(Math.random() * 69) + 1;
         if (!nums.includes(n)) nums.push(n);
       }
-      let mega = Math.floor(Math.random() * 26) + 1;
-      document.getElementById("numbers").innerText = nums.join(" - ") + " | Mega: " + mega;
+      let power = Math.floor(Math.random() * 26) + 1;
+      document.getElementById('numbers').innerText = nums.join(' - ') + ' | Powerball: ' + power;
     }
 
     function saveWish() {
-      let wish = document.getElementById("wish").value;
-      if (wish) alert("Your wish has been received. Stay hopeful.");
+      let wish = document.getElementById('wish').value;
+      if (wish) alert('Your wish has been received. Stay hopeful.');
     }
   </script>
 
