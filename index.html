@@ -4,150 +4,108 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guiding Light Community Outreach</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background-color: #2a2a2a;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 36px;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    .donate-section {
-      background-color: #f7f7f7;
-      border-radius: 10px;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .donate-section h2 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-    .donate-section p {
-      font-size: 16px;
-      margin-bottom: 20px;
-    }
-    .donate-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-    .donate-buttons button {
-      padding: 12px 25px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      color: white;
-      cursor: pointer;
-    }
-    .venmo { background-color: #3D95CE; }
-    .cashapp { background-color: #00C244; }
-    .section-title { font-size: 26px; text-align: center; margin-bottom: 20px; }
-    .prayers, .sayings {
-      background-color: #fff;
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 40px;
-    }
-    .lottery {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .lottery button {
-      padding: 10px 20px;
-      font-size: 16px;
-      border-radius: 5px;
-      border: none;
-      background-color: #ff9800;
-      color: white;
-      cursor: pointer;
-    }
-    footer {
-      background-color: #2a2a2a;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800 font-sans">
 
-  <!-- Header -->
-  <header>
-    <h1>Guiding Light Community Outreach</h1>
-    <p>Prayer, spiritual guidance, and optimism for our community</p>
-  </header>
-
-  <!-- Donate Section -->
-  <section class="donate-section">
-    <h2>Support Our Ministry</h2>
-    <p>Your donations help us provide prayer, guidance, and hope to those in need.</p>
-    <div class="donate-buttons">
-<a href="https://venmo.com/GLCOutreach" target="_blank">
-  <button class="venmo">Donate with Venmo</button>
-</a>
-      </a>
-      <a href="https://cash.app/$Netpros96" target="_blank">
-        <button class="cashapp">Donate with Cash App</button>
-      </a>
+  <!-- HERO -->
+  <section class="bg-gradient-to-r from-blue-700 to-indigo-700 text-white text-center py-16 px-6">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Guiding Light Community Outreach</h1>
+    <p class="text-lg max-w-2xl mx-auto">Bringing hope, prayer, and encouragement to those in need. You are not alone.</p>
+    <div class="mt-6 space-x-4">
+      <a href="#donate" class="bg-green-500 px-6 py-3 rounded-xl font-semibold">Donate</a>
+      <a href="#prayer" class="bg-white text-blue-700 px-6 py-3 rounded-xl font-semibold">Request Prayer</a>
     </div>
   </section>
 
-  <!-- Prayer & Guidance Section -->
-  <section class="prayers">
-    <h2 class="section-title">Prayer & Spiritual Guidance</h2>
-    <p>We offer prayers and guidance for those seeking hope, comfort, and clarity in difficult times. Feel free to reach out to us via our contact form or email for personal prayers.</p>
-  </section>
+  <main class="max-w-5xl mx-auto p-6">
 
-  <!-- Optimistic Sayings Section -->
-  <section class="sayings">
-    <h2 class="section-title">Words of Encouragement</h2>
-    <ul>
-      <li>“Every day is a new beginning, take a deep breath and start again.”</li>
-      <li>“Hope is the light that guides us through the darkest moments.”</li>
-      <li>“Small acts of kindness can change the world.”</li>
-      <li>“Faith is taking the first step even when you don’t see the whole staircase.”</li>
-    </ul>
-  </section>
+    <!-- ABOUT -->
+    <section class="mb-10 text-center">
+      <h2 class="text-2xl font-bold mb-3">Our Mission</h2>
+      <p>We provide spiritual guidance, prayer support, and uplifting messages to help people navigate life’s challenges with faith and strength.</p>
+    </section>
 
-  <!-- Lottery Number Generator -->
-  <section class="lottery">
-    <h2 class="section-title">Lottery Number Generator</h2>
-    <p>Click the button to generate random numbers for fun:</p>
-    <button onclick="generateNumbers()">Generate Numbers</button>
-    <p id="lotteryNumbers" style="font-weight:bold; margin-top:15px;"></p>
-  </section>
+    <!-- DONATE -->
+    <section id="donate" class="bg-white p-6 rounded-2xl shadow mb-10 text-center">
+      <h2 class="text-2xl font-bold mb-3">Support Our Mission</h2>
+      <p class="mb-4">Your generosity helps us continue spreading hope and encouragement.</p>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 Guiding Light Community Outreach | Contact: info@guidinglight.org</p>
+      <!-- VENMO & CASH APP BUTTONS -->
+      <div class="flex justify-center gap-4 flex-wrap mb-3">
+        <a href="https://venmo.com/GLCOutreach" target="_blank">
+          <button class="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold">Donate with Venmo</button>
+        </a>
+        <a href="https://cash.app/$Netpros96" target="_blank">
+          <button class="bg-green-600 text-white px-6 py-3 rounded-xl font-semibold">Donate with Cash App</button>
+        </a>
+      </div>
+
+      <p class="text-sm mt-3">Secure donations via Venmo or Cash App</p>
+    </section>
+
+    <!-- PRAYER -->
+    <section id="prayer" class="bg-white p-6 rounded-2xl shadow mb-10">
+      <h2 class="text-xl font-bold mb-3">Submit a Prayer Request</h2>
+      <form action="https://formspree.io/f/yourformid" method="POST">
+        <textarea name="message" required class="w-full p-3 border rounded-xl mb-3" placeholder="Share your prayer request..."></textarea>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-xl">Send Prayer</button>
+      </form>
+    </section>
+
+    <!-- WISHING WELL -->
+    <section class="bg-white p-6 rounded-2xl shadow mb-10">
+      <h2 class="text-xl font-bold mb-3">Wishing Well</h2>
+      <input id="wish" class="w-full p-3 border rounded-xl" placeholder="Make a wish..." />
+      <button onclick="saveWish()" class="mt-3 bg-purple-600 text-white px-4 py-2 rounded-xl">Send Wish</button>
+    </section>
+
+    <!-- INSPIRATION -->
+    <section class="bg-white p-6 rounded-2xl shadow mb-10 text-center">
+      <h2 class="text-xl font-bold mb-3">Daily Inspiration</h2>
+      <p id="quote" class="italic mb-3">Click below to receive encouragement.</p>
+      <button onclick="newQuote()" class="bg-yellow-500 text-white px-4 py-2 rounded-xl">Inspire Me</button>
+    </section>
+
+    <!-- LOTTERY -->
+    <section class="bg-white p-6 rounded-2xl shadow mb-10 text-center">
+      <h2 class="text-xl font-bold mb-3">Lottery Number Generator</h2>
+      <p id="numbers" class="text-lg font-bold mb-3"></p>
+      <button onclick="generateNumbers()" class="bg-red-500 text-white px-4 py-2 rounded-xl">Generate Numbers</button>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-800 text-white text-center p-6">
+    <p>© 2026 Guiding Light Community Outreach | All Rights Reserved</p>
   </footer>
 
-  <!-- JavaScript for Lottery Generator -->
   <script>
+    function newQuote() {
+      const quotes = [
+        "Stay strong, your breakthrough is coming.",
+        "Faith makes the impossible possible.",
+        "You are guided and protected.",
+        "Hope is never lost.",
+        "Better days are ahead."
+      ];
+      document.getElementById("quote").innerText = quotes[Math.floor(Math.random() * quotes.length)];
+    }
+
     function generateNumbers() {
-      let numbers = [];
-      while(numbers.length < 6){
-        let n = Math.floor(Math.random()*69)+1;
-        if(!numbers.includes(n)) numbers.push(n);
+      let nums = [];
+      while(nums.length < 5) {
+        let n = Math.floor(Math.random() * 69) + 1;
+        if(!nums.includes(n)) nums.push(n);
       }
-      numbers.sort((a,b)=>a-b);
-      document.getElementById('lotteryNumbers').innerText = numbers.join(', ');
+      let mega = Math.floor(Math.random() * 26) + 1;
+      document.getElementById("numbers").innerText = nums.join(" - ") + " | Mega: " + mega;
+    }
+
+    function saveWish() {
+      let wish = document.getElementById("wish").value;
+      if(wish) alert("Your wish has been received. Stay hopeful.");
     }
   </script>
 
