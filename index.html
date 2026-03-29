@@ -80,37 +80,41 @@
     <p>© 2026 Guiding Light Community Outreach | All Rights Reserved</p>
   </footer>
 
-let prayers = {};
-let quotes = [];
+  <script>
+    let prayers = {};
+    let quotes = [];
 
-Promise.all([
-  fetch('prayer.json').then(res => res.json()),
-  fetch('quotes.json').then(res => res.json())
-])
-.then(([prayerData, quoteData]) => {
-  prayers = prayerData;
-  quotes = quoteData;
+    // Fetch both JSON files
+    Promise.all([
+      fetch('prayer.json').then(res => res.json()),
+      fetch('quotes.json').then(res => res.json())
+    ])
+    .then(([prayerData, quoteData]) => {
+      prayers = prayerData;
+      quotes = quoteData;
 
-  // Populate prayer topics
-  const topicSelect = document.getElementById('prayerTopic');
-  Object.keys(prayers).forEach(topic => {
-    const option = document.createElement('option');
-    option.value = topic;
-    option.textContent = topic.charAt(0).toUpperCase() + topic.slice(1);
-    topicSelect.appendChild(option);
-  });
-})
-.catch(err => console.error("Error loading JSON:", err));
+      // Populate prayer topics
+      const topicSelect = document.getElementById('prayerTopic');
+      Object.keys(prayers).forEach(topic => {
+        const option = document.createElement('option');
+        option.value = topic;
+        option.textContent = topic.charAt(0).toUpperCase() + topic.slice(1);
+        topicSelect.appendChild(option);
+      });
+    })
+    .catch(err => console.error('Error loading JSON:', err));
 
     function generatePrayer() {
       const topic = document.getElementById('prayerTopic').value;
-      const list = data.prayers[topic];
+      if (!prayers[topic]) return;
+      const list = prayers[topic];
       const prayer = list[Math.floor(Math.random() * list.length)];
       document.getElementById('prayerOutput').innerText = prayer;
     }
 
     function newQuote() {
-      const quote = data.quotes[Math.floor(Math.random() * data.quotes.length)];
+      if (!quotes.length) return;
+      const quote = quotes[Math.floor(Math.random() * quotes.length)];
       document.getElementById('quote').innerText = quote;
     }
 
@@ -139,5 +143,6 @@ Promise.all([
       if (wish) alert('Your wish has been received. Stay hopeful.');
     }
   </script>
+
 </body>
 </html>
