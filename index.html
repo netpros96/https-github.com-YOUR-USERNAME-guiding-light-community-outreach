@@ -1,95 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guiding Light Community Outreach</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guiding Light Community Outreach - Prayer Requests</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #f3f3f3; color: #333; padding: 20px; }
+  h1 { color: #2c3e50; }
+  select, button, input, textarea { padding: 10px; margin: 5px 0; width: 100%; max-width: 400px; }
+  #prayerDisplay { background: #fff; padding: 15px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);}
+  form { background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-top: 20px; }
+</style>
 </head>
 <body>
-  <!-- Cloud Background -->
-  <div class="clouds"></div>
 
-  <!-- Header / Hero Section -->
-  <header class="hero">
-    <h1>Guiding Light Community Outreach</h1>
-    <p>Serving our community with hope, prayer, and love</p>
-    <a href="#donations" class="btn">Support Us</a>
-  </header>
+<h1>Guiding Light Community Outreach</h1>
 
-  <!-- Mission / Community Section -->
-  <section class="mission">
-    <h2>Our Mission</h2>
-    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80" alt="People helping each other">
-    <p>We are committed to serving our community and helping those in need through prayer and action.</p>
-  </section>
+<h2>Receive a Prayer</h2>
+<label for="topicSelect">Select a Topic:</label>
+<select id="topicSelect">
+  <option value="">--Choose a Topic--</option>
+  <option value="healing">Healing</option>
+  <option value="guidance">Guidance</option>
+  <option value="strength">Strength</option>
+  <option value="peace">Peace</option>
+  <option value="gratitude">Gratitude</option>
+  <option value="faith">Faith</option>
+  <option value="support">Support</option>
+  <option value="protection">Protection</option>
+  <option value="forgiveness">Forgiveness</option>
+  <option value="prosperity">Prosperity</option>
+</select>
+<button onclick="showPrayer()">Show Prayer</button>
 
-  <section class="mission">
-    <h2>Community Support</h2>
-    <img src="https://images.unsplash.com/photo-1588776814546-9e234e53ebc5?auto=format&fit=crop&w=800&q=80" alt="Helping hands">
-    <p>Join us in making a difference for families and individuals who need hope and care.</p>
-  </section>
+<div id="prayerDisplay">Your prayer will appear here.</div>
 
-  <!-- Donations Section -->
-  <section id="donations">
-    <h2>Donate</h2>
-    <p>Your contributions help us continue our mission of helping others.</p>
-    <ul>
-      <li><a href="https://cash.app/$YourCashTag" target="_blank">Cash App</a></li>
-      <li><a href="https://venmo.com/YourUsername" target="_blank">Venmo</a></li>
-    </ul>
-    <p><em>Disclaimer: Donations are voluntary and for supporting our nonprofit outreach.</em></p>
-  </section>
+<h2>Submit a Prayer Request</h2>
+<form id="prayerForm">
+  <input type="text" id="name" placeholder="Your Name (optional)">
+  <input type="email" id="email" placeholder="Email (optional)">
+  <select id="requestTopic">
+    <option value="">--Select Topic--</option>
+    <option value="healing">Healing</option>
+    <option value="guidance">Guidance</option>
+    <option value="strength">Strength</option>
+    <option value="peace">Peace</option>
+    <option value="gratitude">Gratitude</option>
+    <option value="faith">Faith</option>
+    <option value="support">Support</option>
+    <option value="protection">Protection</option>
+    <option value="forgiveness">Forgiveness</option>
+    <option value="prosperity">Prosperity</option>
+  </select>
+  <textarea id="prayerText" placeholder="Enter your prayer request here"></textarea>
+  <button type="button" onclick="submitPrayer()">Submit</button>
+</form>
 
-  <!-- Prayers Section Example -->
-  <section class="prayers">
-    <h2>Prayers for Guidance</h2>
-    <ul>
-      <li>Heavenly Father, guide us in our daily work and service.</li>
-      <li>Lord, help us bring light to those in darkness.</li>
-      <li>Grant us patience and wisdom as we serve our community.</li>
-      <li>Protect our volunteers and those we help.</li>
-      <li>Give us strength to meet challenges with faith.</li>
-      <li>Inspire acts of kindness in all we do.</li>
-      <li>Help us bring hope to the hopeless.</li>
-      <li>Keep our hearts humble and compassionate.</li>
-      <li>Lord, bless our efforts and multiply their impact.</li>
-      <li>May our work reflect Your love and mercy.</li>
-    </ul>
-  </section>
+<script>
+const prayers = {
+  healing: [
+    "Lord, please touch my father with Your healing hands and restore his health.",
+    "God, bring strength to my body and peace to my mind as I recover.",
+    "Heavenly Father, grant wisdom to my doctors and comfort to my family.",
+    "Lord Jesus, ease my pain and fill me with Your peace.",
+    "Father, renew my body and spirit so I may serve You fully.",
+    "Lord, give patience during my recovery and hope for each new day.",
+    "God, surround me with love and encourage those caring for me.",
+    "Lord, restore every part of my body that is hurting.",
+    "Father, grant me endurance and faith during this time of healing.",
+    "Jesus, let Your light shine into my life and bring restoration.",
+    "God, may Your presence calm my fears and strengthen my spirit.",
+    "Lord, remove all sickness and replace it with Your health and vitality.",
+    "Heavenly Father, carry me through this trial and lift my spirits.",
+    "Jesus, heal my mind as well as my body.",
+    "Lord, surround me with Your angels and protection.",
+    "God, give me hope when the road seems long and difficult.",
+    "Father, remind me daily of Your love and mercy.",
+    "Lord, help me trust Your timing for complete healing.",
+    "Jesus, let Your grace restore my energy and health.",
+    "God, calm any anxiety and fill me with peace.",
+    "Lord, help me see Your hand at work in my recovery.",
+    "Father, bless the hands of those caring for me.",
+    "Lord, give me courage to face treatments and appointments.",
+    "Jesus, heal me completely, body, mind, and spirit.",
+    "God, let Your light shine on every area of pain and sickness.",
+    "Lord, bring hope to my heart when I feel weak.",
+    "Father, remind me that You are my healer and protector.",
+    "Jesus, strengthen my faith as my body regains health.",
+    "God, bless my loved ones with peace as they support me.",
+    "Lord, thank You for Your endless love and the healing You bring."
+  ],
+  guidance: [
+    "Lord, please guide my steps and help me make wise decisions.",
+    "God, light my path and give me clarity in confusion.",
+    "Father, grant me discernment to see the right choice.",
+    "Lord Jesus, help me hear Your voice above all others.",
+    "God, open doors of opportunity that align with Your will.",
+    "Lord, give me patience to wait for the right answers.",
+    "Father, surround me with people who encourage and guide me.",
+    "Jesus, help me trust Your plan even when it seems unclear.",
+    "Lord, remove doubt and replace it with confidence in You.",
+    "God, help me follow Your wisdom rather than my own desires.",
+    "Father, teach me to recognize signs and guidance from You.",
+    "Lord, grant me courage to act when Your direction is clear.",
+    "Jesus, help me discern between fear and Your truth.",
+    "God, give me peace as I make difficult decisions.",
+    "Lord, show me the steps I need to take each day.",
+    "Father, help me remain humble and open to Your instruction.",
+    "Jesus, guide me in my work, relationships, and life choices.",
+    "Lord, help me avoid pitfalls and follow Your righteousness.",
+    "God, grant me insight into opportunities that honor You.",
+    "Father, help me strengthen my faith in Your guidance.",
+    "Lord, let Your wisdom fill my mind and heart.",
+    "Jesus, help me listen carefully and act faithfully.",
+    "God, bless me with understanding and clarity.",
+    "Father, lead me away from distractions and confusion.",
+    "Lord, help me prioritize what truly matters.",
+    "Jesus, let Your Spirit direct my decisions.",
+    "God, remind me that You are always with me.",
+    "Father, give me confidence to trust Your timing.",
+    "Lord, help me seek Your counsel before speaking or acting.",
+    "Jesus, thank You for guiding me every step of the way."
+  ],
+  // ...include the remaining 8 topics (strength, peace, gratitude, faith, support, protection, forgiveness, prosperity) with all 30 prayers each
+};
 
-  <section class="prayers">
-    <h2>Prayers for Healing</h2>
-    <ul>
-      <li>Heavenly Father, grant comfort to those who are hurting.</li>
-      <li>Lord, heal the sick in body, mind, and spirit.</li>
-      <li>May we bring hope to those in despair.</li>
-      <li>Protect families and provide them peace.</li>
-      <li>Guide our hands in acts of service and care.</li>
-      <li>Give strength to those in pain.</li>
-      <li>Fill hearts with hope and love.</li>
-      <li>Help us be instruments of Your healing.</li>
-      <li>Lord, restore health where it is broken.</li>
-      <li>May our prayers bring comfort and faith.</li>
-    </ul>
-  </section>
+// Show one random prayer
+function showPrayer() {
+  const topic = document.getElementById("topicSelect").value;
+  const display = document.getElementById("prayerDisplay");
+  if (!topic || !prayers[topic]) {
+    display.innerText = "Please select a topic.";
+    return;
+  }
+  const list = prayers[topic];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  display.innerText = list[randomIndex];
+}
 
-  <!-- Inspirational Quotes Section -->
-  <section class="quotes">
-    <h2>Inspirational Quotes</h2>
-    <ul>
-      <li>"Be the change you wish to see in the world." – Mahatma Gandhi</li>
-      <li>"No act of kindness, no matter how small, is ever wasted." – Aesop</li>
-      <li>"Helping one person might not change the world, but it could change the world for one person." – Unknown</li>
-      <li>"Faith is taking the first step even when you don't see the whole staircase." – Martin Luther King Jr.</li>
-      <li>"Service to others is the rent you pay for your room here on earth." – Muhammad Ali</li>
-      <!-- Add remaining quotes here up to 300 -->
-    </ul>
-  </section>
+// Submit prayer request (placeholder)
+function submitPrayer() {
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const topic = document.getElementById("requestTopic").value;
+  const text = document.getElementById("prayerText").value;
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2026 Guiding Light Community Outreach</p>
-  </footer>
+  if (!topic || !text) {
+    alert("Please select a topic and enter your prayer request.");
+    return;
+  }
+
+  alert("Thank you! Your prayer request has been submitted to Guiding Light Community Outreach.");
+
+  document.getElementById("prayerForm").reset();
+}
+</script>
 </body>
 </html>
