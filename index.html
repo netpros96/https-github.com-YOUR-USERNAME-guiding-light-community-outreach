@@ -4,157 +4,92 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guiding Light Community Outreach</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body>
+  <!-- Cloud Background -->
+  <div class="clouds"></div>
 
-  <!-- HERO -->
-  <section class="bg-gradient-to-r from-blue-700 to-indigo-700 text-white text-center py-16 px-6">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">Guiding Light Community Outreach</h1>
-    <p class="text-lg max-w-2xl mx-auto">Bringing hope, prayer, and encouragement to those in need. You are not alone.</p>
-    <div class="mt-6 space-x-4">
-      <a href="#donate" class="bg-green-500 px-6 py-3 rounded-xl font-semibold">Donate</a>
-      <a href="#prayer" class="bg-white text-blue-700 px-6 py-3 rounded-xl font-semibold">Receive Prayer</a>
-    </div>
+  <!-- Header / Hero Section -->
+  <header class="hero">
+    <h1>Guiding Light Community Outreach</h1>
+    <p>Serving our community with hope, prayer, and love</p>
+    <a href="#donations" class="btn">Support Us</a>
+  </header>
+
+  <!-- Mission / Community Section -->
+  <section class="mission">
+    <h2>Our Mission</h2>
+    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80" alt="People helping each other">
+    <p>We are committed to serving our community and helping those in need through prayer and action.</p>
   </section>
 
-  <main class="max-w-5xl mx-auto p-6">
+  <section class="mission">
+    <h2>Community Support</h2>
+    <img src="https://images.unsplash.com/photo-1588776814546-9e234e53ebc5?auto=format&fit=crop&w=800&q=80" alt="Helping hands">
+    <p>Join us in making a difference for families and individuals who need hope and care.</p>
+  </section>
 
-    <!-- ABOUT -->
-    <section class="mb-10 text-center">
-      <h2 class="text-2xl font-bold mb-3">Our Mission</h2>
-      <p>We provide spiritual guidance, prayer support, and uplifting messages to help people navigate life’s challenges with faith and strength.</p>
-    </section>
+  <!-- Donations Section -->
+  <section id="donations">
+    <h2>Donate</h2>
+    <p>Your contributions help us continue our mission of helping others.</p>
+    <ul>
+      <li><a href="https://cash.app/$YourCashTag" target="_blank">Cash App</a></li>
+      <li><a href="https://venmo.com/YourUsername" target="_blank">Venmo</a></li>
+    </ul>
+    <p><em>Disclaimer: Donations are voluntary and for supporting our nonprofit outreach.</em></p>
+  </section>
 
-    <!-- DONATE -->
-    <section id="donate" class="bg-white p-6 rounded-2xl shadow mb-10 text-center">
-      <h2 class="text-2xl font-bold mb-3">Support Our Mission</h2>
-      <p class="mb-4">Your generosity helps us continue spreading hope and encouragement.</p>
-      <div class="flex justify-center gap-4 flex-wrap mb-3">
-        <a href="https://venmo.com/GLCOutreach" target="_blank">
-          <button class="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold">Donate with Venmo</button>
-        </a>
-        <a href="https://cash.app/https://cash.app/$GLCOutreach" target="_blank">
-          <button class="bg-green-600 text-white px-6 py-3 rounded-xl font-semibold">Donate with Cash App</button>
-        </a>
-      </div>
-      <p class="text-sm mt-3">Secure donations via Venmo or Cash App</p>
-    </section>
+  <!-- Prayers Section Example -->
+  <section class="prayers">
+    <h2>Prayers for Guidance</h2>
+    <ul>
+      <li>Heavenly Father, guide us in our daily work and service.</li>
+      <li>Lord, help us bring light to those in darkness.</li>
+      <li>Grant us patience and wisdom as we serve our community.</li>
+      <li>Protect our volunteers and those we help.</li>
+      <li>Give us strength to meet challenges with faith.</li>
+      <li>Inspire acts of kindness in all we do.</li>
+      <li>Help us bring hope to the hopeless.</li>
+      <li>Keep our hearts humble and compassionate.</li>
+      <li>Lord, bless our efforts and multiply their impact.</li>
+      <li>May our work reflect Your love and mercy.</li>
+    </ul>
+  </section>
 
-    <!-- SCRIPTED PRAYER -->
-    <section id="prayer" class="bg-white p-6 rounded-2xl shadow mb-10 text-center">
-      <h2 class="text-xl font-bold mb-3">Receive a Prayer</h2>
-      <p>Select your prayer intention:</p>
-      <select id="prayerTopic" class="w-full p-3 border rounded-xl mb-3">
-        <option value="healing">Healing</option>
-        <option value="guidance">Guidance</option>
-        <option value="peace">Peace</option>
-        <option value="gratitude">Gratitude</option>
-        <option value="strength">Strength</option>
-        <option value="forgiveness">Forgiveness</option>
-        <option value="protection">Protection</option>
-        <option value="comfort">Comfort</option>
-        <option value="wisdom">Wisdom</option>
-        <option value="hope">Hope</option>
-      </select>
-      <button onclick="generatePrayer()" class="bg-blue-600 text-white px-4 py-2 rounded-xl">Get Prayer</button>
-      <p id="prayerOutput" class="mt-4 italic text-gray-700"></p>
-    </section>
+  <section class="prayers">
+    <h2>Prayers for Healing</h2>
+    <ul>
+      <li>Heavenly Father, grant comfort to those who are hurting.</li>
+      <li>Lord, heal the sick in body, mind, and spirit.</li>
+      <li>May we bring hope to those in despair.</li>
+      <li>Protect families and provide them peace.</li>
+      <li>Guide our hands in acts of service and care.</li>
+      <li>Give strength to those in pain.</li>
+      <li>Fill hearts with hope and love.</li>
+      <li>Help us be instruments of Your healing.</li>
+      <li>Lord, restore health where it is broken.</li>
+      <li>May our prayers bring comfort and faith.</li>
+    </ul>
+  </section>
 
-    <!-- WISHING WELL -->
-    <section class="bg-white p-6 rounded-2xl shadow mb-10">
-      <h2 class="text-xl font-bold mb-3">Wishing Well</h2>
-      <input id="wish" class="w-full p-3 border rounded-xl" placeholder="Make a wish..." />
-      <button onclick="saveWish()" class="mt-3 bg-purple-600 text-white px-4 py-2 rounded-xl">Send Wish</button>
-    </section>
+  <!-- Inspirational Quotes Section -->
+  <section class="quotes">
+    <h2>Inspirational Quotes</h2>
+    <ul>
+      <li>"Be the change you wish to see in the world." – Mahatma Gandhi</li>
+      <li>"No act of kindness, no matter how small, is ever wasted." – Aesop</li>
+      <li>"Helping one person might not change the world, but it could change the world for one person." – Unknown</li>
+      <li>"Faith is taking the first step even when you don't see the whole staircase." – Martin Luther King Jr.</li>
+      <li>"Service to others is the rent you pay for your room here on earth." – Muhammad Ali</li>
+      <!-- Add remaining quotes here up to 300 -->
+    </ul>
+  </section>
 
-    <!-- INSPIRATION -->
-    <section class="bg-white p-6 rounded-2xl shadow mb-10 text-center">
-      <h2 class="text-xl font-bold mb-3">Daily Inspiration</h2>
-      <p id="quote" class="italic mb-3">Click below to receive encouragement.</p>
-      <button onclick="newQuote()" class="bg-yellow-500 text-white px-4 py-2 rounded-xl">Inspire Me</button>
-    </section>
-
-    <!-- LOTTERY -->
-    <section class="bg-white p-6 rounded-2xl shadow mb-10 text-center">
-      <h2 class="text-xl font-bold mb-3">Lottery Number Generator</h2>
-      <p id="numbers" class="text-lg font-bold mb-3"></p>
-      <button onclick="generateMegaMillions()" class="bg-red-500 text-white px-4 py-2 rounded-xl">Generate Mega Millions</button>
-      <button onclick="generatePowerball()" class="bg-red-700 text-white px-4 py-2 rounded-xl ml-2">Generate Powerball</button>
-      <p class="text-sm text-gray-500 mt-2">Disclaimer: These lottery number generators are for entertainment purposes only. No guarantee of winning is implied.</p>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="bg-gray-800 text-white text-center p-6">
-    <p>© 2026 Guiding Light Community Outreach | All Rights Reserved</p>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Guiding Light Community Outreach</p>
   </footer>
-
-  <script>
-    const prayers = {
-      healing: ["Heavenly Father, bring Your healing touch.","May peace and restoration flow.","Divine light surrounds and heals.","Restore strength to every part of the body.","Bring comfort to those in pain.","Bless all who are suffering with relief.","Guide them to full recovery.","Shower Your healing grace.","Heal hearts, minds, and spirits.","Grant wellness and vitality."],
-      guidance: ["Lord, guide me on the path.","Grant clarity in every decision.","Illuminate my steps.","Help me discern Your will.","Lead me with wisdom.","Show the right path.","Help me make choices aligned with You.","Bless my actions with understanding.","Steer me through challenges.","Keep me aligned with Your plan."],
-      peace: ["May your heart find calm.","Let serenity flow.","Peace be with you.","Release all anxieties.","Find stillness in the storm.","Embrace harmony within.","May tranquility guide you.","Let restful spirit fill you.","Comfort your mind and soul.","Experience deep inner peace."],
-      gratitude: ["Thank You, Lord, for blessings.","I am grateful for every moment.","Let gratitude fill my heart.","Recognize all gifts around me.","Give thanks for loved ones.","Celebrate daily joys.","Appreciate each opportunity.","Express thanks with sincerity.","Acknowledge all blessings.","Carry a thankful heart."],
-      strength: ["Grant strength to face challenges.","May courage fill me.","Sustain me through trials.","Empower me to overcome.","Fortify my spirit.","Help me stand firm.","Provide resilience and endurance.","Give me stamina for each day.","Make me unwavering.","Bless me with inner strength."],
-      forgiveness: ["Help me forgive and find peace.","Release resentment and embrace compassion.","Forgive others as You forgive me.","Let go of anger.","Heal broken relationships.","Grant mercy to all.","Fill hearts with understanding.","Ease burdens of grudges.","Promote reconciliation.","Guide me toward forgiveness."],
-      protection: ["Surround me with Your protection.","Keep me safe from harm.","Guide me with Your light.","Let angels guard me.","Shield my family and loved ones.","Provide divine security.","Defend against danger.","Bless my home and work.","Keep evil at bay.","Ensure safety in all ways."],
-      comfort: ["Console those grieving.","Bring peace to troubled hearts.","Ease sorrow and fear.","Wrap them in Your love.","Let hope and love guide them.","Soothe every pain.","Bring warmth to cold spirits.","Offer solace in sadness.","Lift burdens from hearts.","Provide gentle comfort."],
-      wisdom: ["Grant wisdom to make decisions.","Illuminate my mind and heart.","Help discern truth.","Guide me in understanding.","Bless me with insight.","Let knowledge and prudence prevail.","Encourage thoughtful choices.","Direct my actions wisely.","Sharpen my perception.","Instill divine understanding."],
-      hope: ["Fill my heart with hope.","Renew my spirit.","Let hope anchor me.","Guide me to brighter days.","Encourage optimism.","Sustain belief in good.","Lift my spirits when low.","Keep faith alive.","Inspire expectation of blessings.","Illuminate the path forward."]
-    };
-
-    function generatePrayer() {
-      const topic = document.getElementById('prayerTopic').value;
-      const list = prayers[topic];
-      const prayer = list[Math.floor(Math.random() * list.length)];
-      document.getElementById('prayerOutput').innerText = prayer;
-    }
-
-    const quotes = [
-      "Stay strong, your breakthrough is coming.",
-      "Faith makes the impossible possible.",
-      "You are guided and protected.",
-      "Hope is never lost.",
-      "Better days are ahead.",
-      "Believe in yourself and all that you are.",
-      "Every day is a second chance.",
-      "Courage is the key to change.",
-      "Let your light shine brightly.",
-      "Kindness always returns.",
-      /* ...add all remaining quotes to reach 300... */
-    ];
-
-    function newQuote() {
-      document.getElementById('quote').innerText = quotes[Math.floor(Math.random() * quotes.length)];
-    }
-
-    function generateMegaMillions() {
-      let nums = [];
-      while (nums.length < 5) {
-        let n = Math.floor(Math.random() * 70) + 1;
-        if (!nums.includes(n)) nums.push(n);
-      }
-      let mega = Math.floor(Math.random() * 25) + 1;
-      document.getElementById('numbers').innerText = nums.join(' - ') + ' | Mega: ' + mega;
-    }
-
-    function generatePowerball() {
-      let nums = [];
-      while (nums.length < 5) {
-        let n = Math.floor(Math.random() * 69) + 1;
-        if (!nums.includes(n)) nums.push(n);
-      }
-      let power = Math.floor(Math.random() * 26) + 1;
-      document.getElementById('numbers').innerText = nums.join(' - ') + ' | Powerball: ' + power;
-    }
-
-    function saveWish() {
-      let wish = document.getElementById('wish').value;
-      if (wish) alert('Your wish has been received. Stay hopeful.');
-    }
-  </script>
-
 </body>
 </html>
