@@ -1,153 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guiding Light Community Outreach</title>
-<style>
-  body { font-family: Arial, sans-serif; background: #f3f3f3; color: #333; padding: 20px; }
-  h1, h2 { color: #2c3e50; text-align: center; }
-  select, button { padding: 10px; margin: 5px 0; width: 100%; max-width: 400px; display: block; margin-left:auto; margin-right:auto; }
-  #displayBox, #quoteBox { background: #fff; padding: 20px; margin-top: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); min-height: 80px; text-align: center; font-style: italic; }
-  .section { margin-bottom: 40px; }
-  a.donation { display:block; margin:10px auto; text-align:center; padding:10px 20px; background:#2c3e50; color:#fff; text-decoration:none; border-radius:8px; width:200px;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guiding Light Community Outreach</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800 font-sans">
 
-<h1>Guiding Light Community Outreach</h1>
+  <!-- HERO -->
+  <section class="bg-gradient-to-r from-blue-700 to-indigo-700 text-white text-center py-16 px-6">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Guiding Light Community Outreach</h1>
+    <p class="text-lg max-w-2xl mx-auto">Bringing hope, prayer, and encouragement to those in need. You are not alone.</p>
+    <div class="mt-6 space-x-4">
+      <a href="#donate" class="bg-green-500 px-6 py-3 rounded-xl font-semibold">Donate</a>
+      <a href="#prayer" class="bg-white text-blue-700 px-6 py-3 rounded-xl font-semibold">Receive Prayer</a>
+    </div>
+  </section>
 
-<div class="section">
-  <h2>Receive a Prayer</h2>
-  <select id="prayerTopic">
-    <option value="">--Choose Topic--</option>
-    <option value="healing">Healing</option>
-    <option value="guidance">Guidance</option>
-    <option value="strength">Strength</option>
-    <option value="peace">Peace</option>
-    <option value="gratitude">Gratitude</option>
-    <option value="faith">Faith</option>
-    <option value="support">Support</option>
-    <option value="protection">Protection</option>
-    <option value="forgiveness">Forgiveness</option>
-    <option value="prosperity">Prosperity</option>
-  </select>
-  <button onclick="showPrayer()">Show Prayer</button>
-  <div id="displayBox">Your prayer will appear here.</div>
-</div>
+  <main class="max-w-5xl mx-auto p-6">
 
-<div class="section">
-  <h2>Inspirational Quotes</h2>
-  <button onclick="showQuote()">Show Inspiration</button>
-  <div id="quoteBox">Your inspiration will appear here.</div>
-</div>
+    <!-- ABOUT -->
+    <section class="mb-10 text-center">
+      <h2 class="text-2xl font-bold mb-3">Our Mission</h2>
+      <p>We provide spiritual guidance, prayer support, and uplifting messages to help people navigate life’s challenges with faith and strength.</p>
+    </section>
 
-<div class="section">
-  <h2>Support Our Outreach</h2>
-  <a class="donation" href="https://cash.app/$YourCashAppHandle" target="_blank">Donate via CashApp</a>
-  <a class="donation" href="https://venmo.com/YourVenmoHandle" target="_blank">Donate via Venmo</a>
-</div>
+    <!-- DONATE -->
+    <section id="donate" class="bg-white p-6 rounded-2xl shadow mb-10 text-center">
+      <h2 class="text-2xl font-bold mb-3">Support Our Mission</h2>
+      <p class="mb-4">Your generosity helps us continue spreading hope and encouragement.</p>
+      <div class="flex justify-center gap-4 flex-wrap mb-3">
+        <a href="https://venmo.com/GLCOutreach" target="_blank">
+          <button class="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold">Donate with Venmo</button>
+        </a>
+        <a href="https://cash.app/$GLCOutreach" target="_blank">
+          <button class="bg-green-600 text-white px-6 py-3 rounded-xl font-semibold">Donate with Cash App</button>
+        </a>
+      </div>
+      <p class="text-sm mt-3">Secure donations via Venmo or Cash App</p>
+    </section>
 
-<script>
-const prayers = {
-  healing: [
-    "Lord, heal my body and soul.", "God, bring comfort and restoration.", "Heavenly Father, renew my spirit.",
-    "Jesus, strengthen my body.", "Lord, restore my health completely.", "God, guide the hands of my doctors.",
-    "Father, bring peace during illness.", "Jesus, help me endure this trial.", "Lord, remove pain and suffering.",
-    "God, fill me with hope and energy.", "Father, grant patience in recovery.", "Lord, restore my vitality.",
-    "Jesus, calm my fears.", "God, provide wisdom to caregivers.", "Lord, heal every weakness within me.",
-    "Father, fill my heart with courage.", "Jesus, give me endurance.", "Lord, protect my mind and soul.",
-    "God, bring peace to my loved ones.", "Father, renew my strength daily.", "Jesus, heal all afflictions.",
-    "Lord, surround me with Your love.", "God, provide comfort in all situations.", "Father, heal me completely.",
-    "Jesus, restore hope in my heart.", "Lord, guide me to full recovery.", "God, bless me with renewed life.",
-    "Father, give me perseverance.", "Lord, bring miracles of healing.", "Jesus, be my constant healer."
-  ],
-  guidance: [
-    "Lord, guide my decisions.", "God, light my path.", "Father, help me choose wisely.",
-    "Jesus, give me discernment.", "Lord, open the right doors.", "God, remove confusion from my mind.",
-    "Father, lead me in Your ways.", "Jesus, show me the next step.", "Lord, direct my actions.",
-    "God, give clarity in my choices.", "Father, strengthen my intuition.", "Lord, guide my relationships.",
-    "Jesus, help me hear Your voice.", "God, give patience as I wait.", "Father, bless my decisions.",
-    "Lord, help me avoid pitfalls.", "Jesus, provide wisdom daily.", "God, guide my relationships.",
-    "Father, teach me Your ways.", "Lord, help me follow Your plan.", "Jesus, illuminate my path.",
-    "God, show me Your will.", "Father, grant insight in challenges.", "Lord, direct my steps.",
-    "Jesus, help me trust Your timing.", "God, keep me faithful in guidance.", "Father, bless my journey.",
-    "Lord, grant me peace in choices.", "Jesus, help me act with purpose.", "God, always be my guide."
-  ],
-  strength: [
-    "Lord, strengthen me in times of weakness.", "God, give me courage to face challenges.",
-    "Father, empower me with resilience.", "Jesus, fortify my spirit.", "Lord, help me endure trials.",
-    "God, provide inner strength daily.", "Father, renew my energy.", "Jesus, give me confidence.",
-    "Lord, help me overcome fear.", "God, support me in difficulties.", "Father, make me steadfast.",
-    "Jesus, fill me with perseverance.", "Lord, strengthen my resolve.", "God, uphold me in struggles.",
-    "Father, bless me with determination.", "Jesus, encourage my heart.", "Lord, help me rise above challenges.",
-    "God, give me courage to continue.", "Father, guide me through hardships.", "Jesus, grant me stamina.",
-    "Lord, empower me to serve.", "God, fortify my mind and body.", "Father, bless me with patience.",
-    "Jesus, help me stay strong in faith.", "Lord, lift my spirits.", "God, bless me with endurance.",
-    "Father, strengthen me for each day.", "Jesus, help me face adversity.", "Lord, be my power."
-  ],
-  peace: [
-    "...", // for brevity here, fill in 30 peace prayers like above
-    "..."
-  ],
-  // Continue similarly for gratitude, faith, support, protection, forgiveness, prosperity
-};
+    <!-- SCRIPTED PRAYER -->
+    <section id="prayer" class="bg-white p-6 rounded-2xl shadow mb-10 text-center">
+      <h2 class="text-xl font-bold mb-3">Receive a Prayer</h2>
+      <p>Select your prayer intention:</p>
+      <select id="prayerTopic" class="w-full p-3 border rounded-xl mb-3"></select>
+      <button onclick="generatePrayer()" class="bg-blue-600 text-white px-4 py-2 rounded-xl">Get Prayer</button>
+      <p id="prayerOutput" class="mt-4 italic text-gray-700"></p>
+    </section>
 
-// 300 real inspirational quotes
-const quotes = [
-  "Believe you can and you’re halfway there. — Theodore Roosevelt",
-  "You are never too old to set another goal or to dream a new dream. — C.S. Lewis",
-  "The only way to do great work is to love what you do. — Steve Jobs",
-  "The best way to predict the future is to create it. — Peter Drucker",
-  "You miss 100% of the shots you don’t take. — Wayne Gretzky",
-  "It does not matter how slowly you go as long as you do not stop. — Confucius",
-  "Act as if what you do makes a difference. It does. — William James",
-  "Success is not final, failure is not fatal: It is the courage to continue that counts. — Winston Churchill",
-  "Hardships often prepare ordinary people for an extraordinary destiny. — C.S. Lewis",
-  "Your time is limited, don’t waste it living someone else’s life. — Steve Jobs",
-  "The only limit to our realization of tomorrow is our doubts of today. — Franklin D. Roosevelt",
-  "In the middle of every difficulty lies opportunity. — Albert Einstein",
-  "Believe in yourself and all that you are. — Christian D. Larson",
-  "The future belongs to those who believe in the beauty of their dreams. — Eleanor Roosevelt",
-  "You are braver than you believe, stronger than you seem, and smarter than you think. — A.A. Milne",
-  "Keep your face always toward the sunshine—and shadows will fall behind you. — Walt Whitman",
-  "What you get by achieving your goals is not as important as what you become by achieving your goals. — Zig Ziglar",
-  "Start where you are. Use what you have. Do what you can. — Arthur Ashe",
-  "It always seems impossible until it’s done. — Nelson Mandela",
-  "Dream big and dare to fail. — Norman Vaughan",
-  "You become what you believe. — Oprah Winfrey",
-  "Your life does not get better by chance, it gets better by change. — Jim Rohn",
-  "The harder the battle, the sweeter the victory. — Les Brown",
-  "Don’t wish it were easier. Wish you were better. — Jim Rohn",
-  "A goal without a plan is just a wish. — Antoine de Saint‑Exupéry",
-  "Believe in the power of yet: you might not be there…yet.",
-  "Courage is not the absence of fear but the triumph over it.",
-  "The best revenge is massive success. — Frank Sinatra",
-  "Be the change you wish to see in the world. — Gandhi",
-  "Happiness is not by chance, but by choice. — Jim Rohn",
-  // ...continue filling out up to 300 quotes (I’ll provide the rest below)
-];
+    <!-- WISHING WELL -->
+    <section class="bg-white p-6 rounded-2xl shadow mb-10">
+      <h2 class="text-xl font-bold mb-3">Wishing Well</h2>
+      <input id="wish" class="w-full p-3 border rounded-xl" placeholder="Make a wish..." />
+      <button onclick="saveWish()" class="mt-3 bg-purple-600 text-white px-4 py-2 rounded-xl">Send Wish</button>
+    </section>
 
-// Complete the rest with more real quotes here, up to 300 total.
-// (Because of space, I will provide the full list in the next message if you request it.)
+    <!-- INSPIRATION -->
+    <section class="bg-white p-6 rounded-2xl shadow mb-10 text-center">
+      <h2 class="text-xl font-bold mb-3">Daily Inspiration</h2>
+      <p id="quote" class="italic mb-3">Click below to receive encouragement.</p>
+      <button onclick="newQuote()" class="bg-yellow-500 text-white px-4 py-2 rounded-xl">Inspire Me</button>
+    </section>
 
-function showPrayer() {
-  const topic = document.getElementById("prayerTopic").value;
-  const display = document.getElementById("displayBox");
-  if (!topic || !prayers[topic]) {
-    display.innerText = "Please select a topic.";
-    return;
-  }
-  const list = prayers[topic];
-  const randomIndex = Math.floor(Math.random() * list.length);
-  display.innerText = list[randomIndex];
-}
+    <!-- LOTTERY -->
+    <section class="bg-white p-6 rounded-2xl shadow mb-10 text-center">
+      <h2 class="text-xl font-bold mb-3">Lottery Number Generator</h2>
+      <p id="numbers" class="text-lg font-bold mb-3"></p>
+      <button onclick="generateMegaMillions()" class="bg-red-500 text-white px-4 py-2 rounded-xl">Generate Mega Millions</button>
+      <button onclick="generatePowerball()" class="bg-red-700 text-white px-4 py-2 rounded-xl ml-2">Generate Powerball</button>
+      <p class="text-sm text-gray-500 mt-2">Disclaimer: These lottery number generators are for entertainment purposes only. No guarantee of winning is implied.</p>
+    </section>
 
-function showQuote() {
-  const randomIndex = Math.floor(Math.random() * quotes.length);
-  document.getElementById("quoteBox").innerText = quotes[randomIndex];
-}
-</script>
+  </main>
 
+  <!-- FOOTER -->
+  <footer class="bg-gray-800 text-white text-center p-6">
+    <p>© 2026 Guiding Light Community Outreach | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    let data = {};
+
+    fetch('data.json')
+      .then(response => response.json())
+      .then(json => {
+        data = json;
+        // Populate prayer topics
+        const topicSelect = document.getElementById('prayerTopic');
+        Object.keys(data.prayers).forEach(topic => {
+          const option = document.createElement('option');
+          option.value = topic;
+          option.textContent = topic.charAt(0).toUpperCase() + topic.slice(1);
+          topicSelect.appendChild(option);
+        });
+      });
+
+    function generatePrayer() {
+      const topic = document.getElementById('prayerTopic').value;
+      const list = data.prayers[topic];
+      const prayer = list[Math.floor(Math.random() * list.length)];
+      document.getElementById('prayerOutput').innerText = prayer;
+    }
+
+    function newQuote() {
+      const quote = data.quotes[Math.floor(Math.random() * data.quotes.length)];
+      document.getElementById('quote').innerText = quote;
+    }
+
+    function generateMegaMillions() {
+      let nums = [];
+      while (nums.length < 5) {
+        let n = Math.floor(Math.random() * 70) + 1;
+        if (!nums.includes(n)) nums.push(n);
+      }
+      let mega = Math.floor(Math.random() * 25) + 1;
+      document.getElementById('numbers').innerText = nums.join(' - ') + ' | Mega: ' + mega;
+    }
+
+    function generatePowerball() {
+      let nums = [];
+      while (nums.length < 5) {
+        let n = Math.floor(Math.random() * 69) + 1;
+        if (!nums.includes(n)) nums.push(n);
+      }
+      let power = Math.floor(Math.random() * 26) + 1;
+      document.getElementById('numbers').innerText = nums.join(' - ') + ' | Powerball: ' + power;
+    }
+
+    function saveWish() {
+      let wish = document.getElementById('wish').value;
+      if (wish) alert('Your wish has been received. Stay hopeful.');
+    }
+  </script>
 </body>
 </html>
